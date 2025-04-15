@@ -2,6 +2,12 @@
 Changelog for package clearpath_generator_gz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.3.0 (2025-04-15)
+------------------
+* Add Ouster (`#68 <https://github.com/clearpathrobotics/clearpath_simulator/issues/68>`_)
+* Feature: MoveIt Parameters and Enable (`#70 <https://github.com/clearpathrobotics/clearpath_simulator/issues/70>`_)
+* Contributors: Luis Camero
+
 1.0.0 (2024-11-25)
 ------------------
 * Added minimum version.
