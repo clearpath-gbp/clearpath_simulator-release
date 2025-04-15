@@ -2,6 +2,9 @@
 Changelog for package clearpath_simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.3.0 (2025-04-15)
+------------------
+
 1.0.0 (2024-11-25)
 ------------------
 * Added minimum version.
