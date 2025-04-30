@@ -2,6 +2,9 @@
 Changelog for package clearpath_generator_gz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.3.1 (2025-04-30)
+------------------
+
 2.3.0 (2025-04-11)
 ------------------
 * Add exception handlers to the generators for Unsupported* exceptions (`#78 <https://github.com/clearpathrobotics/clearpath_simulator/issues/78>`_)
