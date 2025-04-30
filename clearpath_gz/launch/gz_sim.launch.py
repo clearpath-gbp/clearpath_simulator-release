@@ -85,22 +85,19 @@ def generate_launch_description():
 
     # Set ignition resource path to include all sourced ros packages
     gz_sim_resource_path = SetEnvironmentVariable(
-        name='GZ_SIM_RESOURCE_PATH',
+        name='IGN_GAZEBO_RESOURCE_PATH',
         value=[
-            os.path.join(pkg_clearpath_gz, 'worlds') + ':',
-            os.path.join(pkg_clearpath_gz, 'meshes') + ':',
+            os.path.join(pkg_clearpath_gz, 'worlds'),
             ':' + ':'.join(packages_paths)])
 
     # Clock bridge
-    clock_bridge = Node(
-        package='ros_gz_bridge',
-        executable='parameter_bridge',
-        name='clock_bridge',
-        output='screen',
-        arguments=[
-            '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock'
-        ]
-    )
+    clock_bridge = Node(package='ros_gz_bridge',
+                        executable='parameter_bridge',
+                        name='clock_bridge',
+                        output='screen',
+                        arguments=[
+                          '/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock'
+                        ])
 
     # Create launch description and add actions
     ld = LaunchDescription(ARGUMENTS)
