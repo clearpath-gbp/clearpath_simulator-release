@@ -1,3 +1,29 @@
+## clearpath_simulator (humble) - 1.3.1-1
+
+The packages in the `clearpath_simulator` repository were released into the `humble` distro by running `/usr/bin/bloom-release clearpath_simulator -t humble -r humble` on `Wed, 30 Apr 2025 22:36:32 -0000`
+
+These packages were released:
+- `clearpath_generator_gz`
+- `clearpath_gz`
+- `clearpath_simulator`
+
+Version of package(s) in repository `clearpath_simulator`:
+
+- upstream repository: https://github.com/clearpathrobotics/clearpath_simulator.git
+- release repository: https://github.com/clearpath-gbp/clearpath_simulator-release.git
+- rosdistro version: `1.3.0-1`
+- old version: `1.3.0-1`
+- new version: `1.3.1-1`
+
+Versions of tools used:
+
+- bloom version: `0.12.0`
+- catkin_pkg version: `1.0.0`
+- rosdep version: `0.25.1`
+- rosdistro version: `1.0.1`
+- vcstools version: `0.1.42`
+
+
 ## clearpath_simulator (jazzy) - 2.3.1-1
 
 The packages in the `clearpath_simulator` repository were released into the `jazzy` distro by running `/usr/bin/bloom-release clearpath_simulator -t jazzy -r jazzy` on `Wed, 30 Apr 2025 22:29:01 -0000`
