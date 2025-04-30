@@ -14,6 +14,8 @@
 #
 # @author Roni Kreinin (rkreinin@clearpathrobotics.com)
 
+import os
+
 from clearpath_config.clearpath_config import ClearpathConfig
 
 from launch import LaunchDescription
@@ -21,8 +23,8 @@ from launch.actions import (
     DeclareLaunchArgument,
     GroupAction,
     IncludeLaunchDescription,
+    OpaqueFunction,
     RegisterEventHandler,
-    OpaqueFunction
 )
 from launch.conditions import IfCondition
 from launch.event_handlers import OnProcessExit
@@ -35,8 +37,6 @@ from launch.substitutions import (
 
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
-
-import os
 
 
 ARGUMENTS = [
@@ -93,8 +93,6 @@ def launch_setup(context, *args, **kwargs):
         setup_path, 'platform/launch', 'platform-service.launch.py'])
     launch_file_sensors_service = PathJoinSubstitution([
         setup_path, 'sensors/launch', 'sensors-service.launch.py'])
-    launch_file_manipulators_service = PathJoinSubstitution([
-        setup_path, 'manipulators/launch', 'manipulators-service.launch.py'])
 
     group_action_spawn_robot = GroupAction([
 
@@ -108,10 +106,6 @@ def launch_setup(context, *args, **kwargs):
             PythonLaunchDescriptionSource([launch_file_sensors_service]),
             launch_arguments=[
               ('prefix', ['/world/', world, '/model/', robot_name, '/link/base_link/sensor/'])]
-        ),
-
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource([launch_file_manipulators_service]),
         ),
 
         # Spawn robot
@@ -211,7 +205,7 @@ def launch_setup(context, *args, **kwargs):
         rviz
     ]
 
-    if not generate.perform(context):
+    if not bool(generate.perform(context)):
         actions.append(group_action_spawn_robot)
 
     return actions
