@@ -2,6 +2,9 @@
 Changelog for package clearpath_simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.9.1 (2026-04-21)
+------------------
+
 2.9.0 (2026-02-11)
 ------------------
 * Update cmake version to 3.20 (`#100 <https://github.com/clearpathrobotics/clearpath_simulator/issues/100>`_)
