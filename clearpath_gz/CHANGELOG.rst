@@ -2,6 +2,9 @@
 Changelog for package clearpath_gz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.9.2 (2026-05-21)
+------------------
+
 2.9.1 (2026-04-21)
 ------------------
 * Fix: robot_spawn.launch.py fails with generate:=false (`#110 <https://github.com/clearpathrobotics/clearpath_simulator/issues/110>`_)
