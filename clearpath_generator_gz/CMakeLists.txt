@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.20)
 project(clearpath_generator_gz)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
@@ -11,6 +11,8 @@ find_package(ament_cmake_python REQUIRED)
 
 install(PROGRAMS
   ${PROJECT_NAME}/launch/generate_launch
+  ${PROJECT_NAME}/nodes/ptz_controller_node
+  ${PROJECT_NAME}/nodes/ptu_sim_relay_node
   ${PROJECT_NAME}/param/generate_param
   DESTINATION lib/${PROJECT_NAME}
 )
