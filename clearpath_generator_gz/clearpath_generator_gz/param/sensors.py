@@ -37,6 +37,7 @@ from clearpath_config.sensors.types.cameras import (
     BaseCamera,
     FlirBlackfly,
     IntelRealsense,
+    LuxonisOAKD,
     StereolabsZed,
 )
 from clearpath_config.sensors.types.gps import (
@@ -46,7 +47,13 @@ from clearpath_config.sensors.types.gps import (
     NovatelSmart7,
     SwiftNavDuro,
 )
-from clearpath_config.sensors.types.imu import BaseIMU, CHRoboticsUM6, Microstrain, RedshiftUM7
+from clearpath_config.sensors.types.imu import (
+    BaseIMU,
+    CHRoboticsUM6,
+    Microstrain,
+    PhidgetsSpatial,
+    RedshiftUM7,
+)
 from clearpath_config.sensors.types.lidars_2d import BaseLidar2D, HokuyoUST, SickLMS1XX
 from clearpath_config.sensors.types.lidars_3d import (
     BaseLidar3D,
@@ -238,6 +245,8 @@ class SensorParam():
             )
 
     class RGBDCameraParam(CameraParam):
+        DEPTH_NAMESPACE = 'depth'
+
         def __init__(
                 self,
                 sensor: BaseCamera,
@@ -255,11 +264,15 @@ class SensorParam():
             )
 
             self.param_file.add(
-                ros_topic=self.get_ros_topic('depth/camera_info'),
+                ros_topic=self.get_ros_topic(self.DEPTH_NAMESPACE + '/camera_info'),
                 gz_topic=self.get_gz_topic('camera_info'),
                 ros_type=MessageType.ROS.CAMERA_INFO,
                 gz_type=MessageType.GZ.CAMERA_INFO,
             )
+
+    class LuxonisOAKDParam(RGBDCameraParam):
+        # The OAK-D driver publishes depth under stereo/
+        DEPTH_NAMESPACE = 'stereo'
 
     class GPSParam(BaseParam):
         def __init__(
@@ -283,10 +296,12 @@ class SensorParam():
         SickLMS1XX.SENSOR_MODEL: Lidar2dParam,
         FlirBlackfly.SENSOR_MODEL: CameraParam,
         IntelRealsense.SENSOR_MODEL: RGBDCameraParam,
+        LuxonisOAKD.SENSOR_MODEL: LuxonisOAKDParam,
         StereolabsZed.SENSOR_MODEL: RGBDCameraParam,
         BaseIMU.SENSOR_MODEL: ImuParam,
         CHRoboticsUM6.SENSOR_MODEL: ImuParam,
         Microstrain.SENSOR_MODEL: ImuParam,
+        PhidgetsSpatial.SENSOR_MODEL: ImuParam,
         RedshiftUM7.SENSOR_MODEL: ImuParam,
         VelodyneLidar.SENSOR_MODEL: Lidar3dParam,
         OusterOS1.SENSOR_MODEL: Lidar3dParam,
