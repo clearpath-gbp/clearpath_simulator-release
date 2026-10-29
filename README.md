@@ -1,3 +1,29 @@
+## clearpath_simulator (jazzy) - 2.9.5-1
+
+The packages in the `clearpath_simulator` repository were released into the `jazzy` distro by running `/usr/bin/bloom-release clearpath_simulator -r jazzy -t jazzy` on `Thu, 29 Oct 2026 04:51:21 -0000`
+
+These packages were released:
+- `clearpath_generator_gz`
+- `clearpath_gz`
+- `clearpath_simulator`
+
+Version of package(s) in repository `clearpath_simulator`:
+
+- upstream repository: https://github.com/clearpathrobotics/clearpath_simulator.git
+- release repository: https://github.com/clearpath-gbp/clearpath_simulator-release.git
+- rosdistro version: `2.9.4-1`
+- old version: `2.9.4-1`
+- new version: `2.9.5-1`
+
+Versions of tools used:
+
+- bloom version: `0.14.4`
+- catkin_pkg version: `1.1.1`
+- rosdep version: `0.27.0`
+- rosdistro version: `1.1.0`
+- vcstools version: `0.1.42`
+
+
 ## clearpath_simulator (jazzy) - 2.9.4-1
 
 The packages in the `clearpath_simulator` repository were released into the `jazzy` distro by running `/usr/bin/bloom-release clearpath_simulator -r jazzy -t jazzy` on `Fri, 07 Aug 2026 12:31:27 -0000`
