@@ -2,6 +2,11 @@
 Changelog for package clearpath_gz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.9.6 (2026-11-08)
+------------------
+* [clearpath_gz] Added empty world. (`#137 <https://github.com/clearpathrobotics/clearpath_simulator/issues/137>`_)
+* Contributors: Tony Baltovski
+
 2.9.5 (2026-10-29)
 ------------------
 * Added headless option for Gazebo. (`#131 <https://github.com/clearpathrobotics/clearpath_simulator/issues/131>`_)
